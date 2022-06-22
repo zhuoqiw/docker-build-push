@@ -7,11 +7,6 @@ on:
         default: '22.04'
         required: true
         type: string
-      UBUNTU_CODE_NAME:
-        description: 'Ubuntu release code name'
-        default: 'jammy'
-        required: true
-        type: string
       PLATFORMS:
         description: 'Host platforms'
         default: 'linux/amd64'
@@ -49,6 +44,6 @@ jobs:
         with:
           platforms: ${{ inputs.PLATFORMS }}
           push: true
-          tags: ${{ inputs.IMAGE_NAME }}:${{ inputs.UBUNTU_CODE-inputs.IMAGE_TAG }}
-          cache-from: type=registry,ref=${{ inputs.IMAGE_NAME }}:${{ inputs.UBUNTU_CODE-inputs.IMAGE_TAG }}
+          tags: ${{ inputs.IMAGE_NAME }}:${{ inputs.IMAGE_TAG }}-${{ inputs.UBUNTU_CODE }}
+          cache-from: type=registry,ref=${{ inputs.IMAGE_NAME }}:${{ inputs.IMAGE_TAG }}-${{ inputs.UBUNTU_CODE }}
           cache-to: type=inline
