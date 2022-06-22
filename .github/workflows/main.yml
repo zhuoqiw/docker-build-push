@@ -45,6 +45,6 @@ jobs:
         with:
           platforms: ${{ inputs.PLATFORMS }}
           push: true
-          tags: ${{ github.repository:inputs.UBUNTU_CODE-inputs.IMAGE_TAG }}
-          cache-from: type=registry,ref=${{ github.repository:inputs.UBUNTU_CODE-inputs.IMAGE_TAG }}
+          tags: ${{ github.repository }}:${{ inputs.UBUNTU_CODE-inputs.IMAGE_TAG }}
+          cache-from: type=registry,ref=${{ github.repository }}:${{ inputs.UBUNTU_CODE-inputs.IMAGE_TAG }}
           cache-to: type=inline
