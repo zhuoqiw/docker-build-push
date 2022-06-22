@@ -4,12 +4,10 @@ on:
     inputs:
       UBUNTU_CODE:
         description: 'Ubuntu release code'
-        default: '22.04'
         required: true
         type: string
       PLATFORMS:
         description: 'Host platforms'
-        default: 'linux/amd64'
         required: true
         type: string
       IMAGE_NAME:
