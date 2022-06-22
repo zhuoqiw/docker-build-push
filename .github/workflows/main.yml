@@ -17,6 +17,10 @@ on:
         default: 'linux/amd64'
         required: true
         type: string
+      IMAGE_NAME:
+        description: 'Docker image name'
+        required: true
+        type: string
       IMAGE_TAG:
         description: 'Docker image tag'
         required: true
@@ -45,6 +49,6 @@ jobs:
         with:
           platforms: ${{ inputs.PLATFORMS }}
           push: true
-          tags: ${{ github.repository }}:${{ inputs.UBUNTU_CODE-inputs.IMAGE_TAG }}
-          cache-from: type=registry,ref=${{ github.repository }}:${{ inputs.UBUNTU_CODE-inputs.IMAGE_TAG }}
+          tags: ${{ inputs.IMAGE_NAME }}:${{ inputs.UBUNTU_CODE-inputs.IMAGE_TAG }}
+          cache-from: type=registry,ref=${{ inputs.IMAGE_NAME }}:${{ inputs.UBUNTU_CODE-inputs.IMAGE_TAG }}
           cache-to: type=inline
