@@ -25,13 +25,6 @@ on:
         description: 'Docker image tag'
         required: true
         type: string
-    secrets:
-      DOCKER_HUB_USER_NAME:
-        description: 'Docker hub user name'
-        required: true
-      DOCKER_HUB_ACCESS_TOKEN:
-        description: 'Docker hub access token'
-        required: true
 
 # For more details, see https://github.com/docker/build-push-action
 jobs:
