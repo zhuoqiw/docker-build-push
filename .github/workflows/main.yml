@@ -17,10 +17,6 @@ on:
         default: 'linux/amd64'
         required: true
         type: string
-      IMAGE_NAME:
-        description: 'Docker image name'
-        required: true
-        type: string
       IMAGE_TAG:
         description: 'Docker image tag'
         required: true
