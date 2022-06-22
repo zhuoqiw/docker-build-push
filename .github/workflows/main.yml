@@ -49,6 +49,6 @@ jobs:
         with:
           platforms: ${{ inputs.PLATFORMS }}
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USER_NAME }}/${{ secrets.IMAGE_NAME }}:${{ inputs.UBUNTU_CODE }}-${{ secrets.IMAGE_TAG }}
-          cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_USER_NAME }}/${{ secrets.IMAGE_NAME }}:${{ inputs.UBUNTU_CODE }}-${{ secrets.IMAGE_TAG }}
+          tags: ${{ github.repository:inputs.UBUNTU_CODE-inputs.IMAGE_TAG }}
+          cache-from: type=registry,ref=${{ github.repository:inputs.UBUNTU_CODE-inputs.IMAGE_TAG }}
           cache-to: type=inline
