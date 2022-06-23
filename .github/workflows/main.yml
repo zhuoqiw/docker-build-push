@@ -46,7 +46,7 @@ jobs:
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
       -
         name: Build and push on 20.04
-        if: inputs.ubuntu_version == '20.04'
+        if: ${{ inputs.ubuntu_version == '20.04' }}
         uses: docker/build-push-action@v3
         with:
           platforms: ${{ inputs.platforms }}
@@ -59,7 +59,7 @@ jobs:
             ${{ inputs.image_name }}:latest
       -
         name: Build and push on 22.04
-        if: inputs.ubuntu_version == '22.04'
+        if: ${{ inputs.ubuntu_version == '22.04' }}
         uses: docker/build-push-action@v3
         with:
           platforms: ${{ inputs.platforms }}
