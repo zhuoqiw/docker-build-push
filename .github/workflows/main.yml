@@ -2,8 +2,8 @@
 on:
   workflow_call:
     inputs:
-      ubuntu_code:
-        description: 'Ubuntu release code'
+      ubuntu_version:
+        description: 'Ubuntu version'
         required: true
         type: string
       platforms:
@@ -29,8 +29,8 @@ on:
 # For more details, see https://github.com/docker/build-push-action
 jobs:
   image:
-    name: ${{ inputs.ubuntu_code }} / ${{ inputs.platforms }}
-    runs-on: ubuntu-${{ inputs.ubuntu_code }}
+    name: ${{ inputs.ubuntu_version }} / ${{ inputs.platforms }}
+    runs-on: ubuntu-${{ inputs.ubuntu_version }}
     steps:
       -
         name: Set up QEMU
@@ -49,7 +49,8 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           platforms: ${{ inputs.platforms }}
+          build-args: UBUNTU_VERSION=${{ inputs.ubuntu_version }}
           push: true
           tags: |
-            ${{ inputs.image_name }}:${{ inputs.image_tag }}-${{ inputs.ubuntu_code }}
+            ${{ inputs.image_name }}:${{ inputs.image_tag }}-${{ inputs.ubuntu_version }}
             ${{ inputs.image_name }}:latest
