@@ -28,7 +28,7 @@ on:
 
 # For more details, see https://github.com/docker/build-push-action
 jobs:
-  image:
+  build-push:
     name: ${{ inputs.ubuntu_version }} / ${{ inputs.platforms }}
     runs-on: ubuntu-${{ inputs.ubuntu_version }}
     steps:
