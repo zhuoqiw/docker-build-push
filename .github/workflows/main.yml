@@ -29,7 +29,7 @@ on:
 # For more details, see https://github.com/docker/build-push-action
 jobs:
   image:
-    name: ${{ inputs.ubuntu_code }} // ${{ inputs.platforms }}
+    name: ${{ inputs.ubuntu_code }} / ${{ inputs.platforms }}
     runs-on: ubuntu-${{ inputs.ubuntu_code }}
     steps:
       -
