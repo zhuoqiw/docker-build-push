@@ -15,8 +15,8 @@ on:
         default: ${{ github.repository }}
         required: false
         type: string
-      image_tag:
-        description: 'Docker image tag'
+      image_tags:
+        description: 'Docker image tags'
         default: 'latest'
         required: false
         type: string
@@ -50,4 +50,4 @@ jobs:
         with:
           platforms: ${{ inputs.platforms }}
           push: true
-          tags: ${{ inputs.image_name }}:${{ inputs.image_tag }}
+          tags: ${{ inputs.image_name }}:${{ inputs.image_tags }}
