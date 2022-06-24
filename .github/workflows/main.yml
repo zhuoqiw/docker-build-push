@@ -49,11 +49,11 @@ jobs:
         if: ${{ inputs.ubuntu_version == '20.04' }}
         uses: docker/build-push-action@v3
         with:
+          push: true
           platforms: ${{ inputs.platforms }}
           build-args: |
             UBUNTU_VERSION=${{ inputs.ubuntu_version }}
             ROS_DISTRO=galactic
-          push: true
           tags: |
             ${{ inputs.image_name }}:${{ inputs.image_tag }}-${{ inputs.ubuntu_version }}
             ${{ inputs.image_name }}:latest
@@ -62,11 +62,11 @@ jobs:
         if: ${{ inputs.ubuntu_version == '22.04' }}
         uses: docker/build-push-action@v3
         with:
+          push: true
           platforms: ${{ inputs.platforms }}
           build-args: |
             UBUNTU_VERSION=${{ inputs.ubuntu_version }}
             ROS_DISTRO=humble
-          push: true
           tags: |
             ${{ inputs.image_name }}:${{ inputs.image_tag }}-${{ inputs.ubuntu_version }}
             ${{ inputs.image_name }}:latest
