@@ -29,7 +29,7 @@ on:
 # For more details, see https://github.com/docker/build-push-action
 jobs:
   build-push:
-    name: ${{ inputs.ubuntu_version }}
+    # name: ${{ inputs.ubuntu_version }}
     runs-on: ubuntu-${{ inputs.ubuntu_version }}
     steps:
       -
